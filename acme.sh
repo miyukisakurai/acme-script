@@ -80,7 +80,7 @@ install_acme(){
         acmeEmail=$autoEmail@gmail.com
         yellow "已取消设置邮箱, 使用自动生成的gmail邮箱: $acmeEmail"
     fi
-    curl https://get.acme.sh | sh -s email=$acmeEmail
+    wget https://get.acme.sh | sh -s email=$acmeEmail
     source ~/.bashrc
     bash ~/.acme.sh/acme.sh --upgrade --auto-upgrade
     bash ~/.acme.sh/acme.sh --set-default-ca --server letsencrypt
